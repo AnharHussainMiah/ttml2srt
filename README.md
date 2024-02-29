@@ -29,6 +29,12 @@ For a while I've been using [`ttconv`](https://github.com/sandflow/ttconv) writt
 
 I'm a simple man with simple needs and so `ttml2srt` was born, it's a single binary with a single purpose take `ttml` and spit out `srt` and do it quickly.
 
+## Downloads
+
+If you want to grab a static binary ready to go simply click on the release tab, this is for `x86` Linux only. For other platforms you'll need to compile from source.
+
+[Releases](https://github.com/AnharHussainMiah/ttml2srt/releases)
+
 ## How to build from source
 
 Just use the standard Rust `cargo` toolchain to build from source. Alternatively to build a statically
