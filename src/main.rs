@@ -72,7 +72,7 @@ fn to_str(f: &str) -> Result<Vec<String>, String> {
         if let (Some(begin), Some(end)) = (child.attr("begin"), child.attr("end")) {
             idx += 1;
             srt.push(format!("{}", idx));
-            srt.push(format!("{} --> {}", begin, end));
+            srt.push(format!("{} --> {}", fix_tc(begin), fix_tc(end)));
             for subs in child.children() {
                 if subs.text() != "" {
                     srt.push(format!(
@@ -85,4 +85,12 @@ fn to_str(f: &str) -> Result<Vec<String>, String> {
         }
     }
     Ok(srt)
+}
+
+fn fix_tc(x: &str) -> String {
+    if !x.contains(".") {
+        format!("{},000", x)
+    } else {
+        x.replace(".", ",")
+    }
 }
